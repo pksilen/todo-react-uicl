@@ -1,7 +1,6 @@
 import React from 'react';
 import { ErrorBoundary as ReactErrorBoundary } from 'react-error-boundary';
-import { Button } from 'app/common/components/buttons/Button';
-import { Heading3 } from 'app/common/components/typography/Heading3';
+import { Button, Heading3 } from 'ui-components-lib';
 import { useTodosStore } from 'app/stores/todos/todosStore';
 import classes from './ErrorBoundary.module.scss';
 

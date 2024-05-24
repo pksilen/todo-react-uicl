@@ -1,10 +1,13 @@
 import classNames from 'classnames';
-import { IconButton } from 'app/common/components/buttons/IconButton';
-import { EditIcon, RemoveIcon } from 'app/common/components/icons/Icons';
-import { Checkbox } from 'app/common/components/inputs/Checkbox';
-import { EditTextInput } from 'app/common/components/inputs/EditTextInput';
-import { TableCell } from 'app/common/components/table/TableCell';
-import { TableRow } from 'app/common/components/table/TableRow';
+import {
+  Checkbox,
+  EditIcon,
+  EditTextInput,
+  IconButton,
+  RemoveIcon,
+  TableCell,
+  TableRow
+} from 'ui-components-lib';
 import { Todo } from 'app/stores/todos/Todo';
 import classes from './TodoTableRow.module.scss';
 import { useTodo } from './useTodo';

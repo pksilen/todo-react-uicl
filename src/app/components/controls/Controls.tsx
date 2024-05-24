@@ -1,14 +1,12 @@
 import {
-  IconRadioButtonGroup,
-  IconRadioButtonProps
-} from 'app/common/components/buttons/IconRadioButtonGroup';
-import {
   DarkModeIcon,
+  IconRadioButtonGroup,
+  IconRadioButtonProps,
   LightModeIcon,
   ListIcon,
+  Switch,
   TableIcon
-} from 'app/common/components/icons/Icons';
-import { Switch } from 'app/common/components/switches/Switch';
+} from 'ui-components-lib';
 import { ViewType, useControlsStore } from 'app/stores/controls/controlsStore';
 import { useTodosStore } from 'app/stores/todos/todosStore';
 import classes from './Controls.module.scss';

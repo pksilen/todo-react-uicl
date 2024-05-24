@@ -17,6 +17,7 @@
     "react-scripts": "5.0.1",
     "sass": "^1.75.0",
     "typescript": "^4.9.5",
+    "ui-components-lib": "github:pksilen/ui-components-lib#main",
     "uuid": "^9.0.1",
     "web-vitals": "^2.1.4",
     "zustand": "^4.5.2"

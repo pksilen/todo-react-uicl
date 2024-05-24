@@ -1,4 +1,4 @@
-import { List } from 'app/common/components/list/List';
+import { List } from 'ui-components-lib';
 import { Todo } from 'app/stores/todos/Todo';
 import { PendingTodos } from './PendingTodos';
 import { TodoListItem } from './todo/TodoListItem';
