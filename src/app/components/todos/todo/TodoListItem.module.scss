@@ -1,0 +1,18 @@
+.todo {
+  display: flex;
+
+  .title {
+    flex-grow: 1;
+    overflow: hidden;
+
+    &.isDone {
+      text-decoration: line-through;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: end;
+  }
+}

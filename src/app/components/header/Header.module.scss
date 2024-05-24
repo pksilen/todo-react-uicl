@@ -1,0 +1,10 @@
+.todosHeader {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  .todoSearch {
+    flex-grow: 1;
+    margin-inline-start: 40px
+  }
+}
