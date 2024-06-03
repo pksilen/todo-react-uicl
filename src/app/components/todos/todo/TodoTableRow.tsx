@@ -17,7 +17,7 @@ type Props = {
 };
 
 export const TodoTableRow = ({ todo: { id, title, isDone } }: Props) => {
-  const { edit, isEditable, remove, setAsEditable, toggleDone } = useTodo(id);
+  const { editTitle, isEditable, remove, setAsEditable, toggleDone } = useTodo(id);
   const titleClasses = classNames(classes.title, isDone && classes.isDone);
 
   return (
@@ -27,7 +27,7 @@ export const TodoTableRow = ({ todo: { id, title, isDone } }: Props) => {
       </TableCell>
       {isEditable ? (
         <TableCell>
-          <EditTextInput onEditComplete={edit} text={title} />
+          <EditTextInput onEditComplete={editTitle} text={title} />
         </TableCell>
       ) : (
         <TableCell className={titleClasses} onDoubleClick={setAsEditable}>
