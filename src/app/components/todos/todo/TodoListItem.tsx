@@ -19,25 +19,25 @@ type Props = {
 };
 
 export const TodoListItem = ({ todo: { id, title, isDone } }: Props) => {
-  const { editTodo, isEditable, removeTodo, setEditableTodo, toggleTodoDone } = useTodo(id);
+  const { editTitle, isEditable, remove, setAsEditable, toggleDone } = useTodo(id);
   const titleClasses = classNames(classes.title, isDone && classes.isDone);
 
   return (
     <ListItem className={classes.todo}>
       <ListItemIcon icon={<TodoIcon color={isDone ? 'success' : 'error'} />} />
       {isEditable ? (
-        <EditTextInput aria-label="Edit todo" onEditComplete={editTodo(id)} text={title} />
+        <EditTextInput aria-label="Edit todo" onEditComplete={editTitle} text={title} />
       ) : (
-        <ListItemText className={titleClasses} onDoubleClick={setEditableTodo} text={title} />
+        <ListItemText className={titleClasses} onDoubleClick={setAsEditable} text={title} />
       )}
       <div className={classes.buttons}>
         <IconOrButton
           icon={<CheckIcon />}
-          onClick={toggleTodoDone}
+          onClick={toggleDone}
           text={isDone ? 'Mark undone' : 'Mark done'}
         />
-        <IconOrButton icon={<EditIcon />} onClick={setEditableTodo} text="Edit" />
-        <IconOrButton icon={<RemoveIcon />} onClick={removeTodo} text="Remove" />
+        <IconOrButton icon={<EditIcon />} onClick={setAsEditable} text="Edit" />
+        <IconOrButton icon={<RemoveIcon />} onClick={remove} text="Remove" />
       </div>
     </ListItem>
   );
