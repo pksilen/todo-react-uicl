@@ -19,14 +19,14 @@ type Props = {
 };
 
 export const TodoListItem = ({ todo: { id, title, isDone } }: Props) => {
-  const { editTitle, isEditable, remove, setAsEditable, toggleDone } = useTodo(id);
+  const { changeTitle, isEditable, remove, setAsEditable, toggleDone } = useTodo(id);
   const titleClasses = classNames(classes.title, isDone && classes.isDone);
 
   return (
     <ListItem className={classes.todo}>
       <ListItemIcon icon={<TodoIcon color={isDone ? 'success' : 'error'} />} />
       {isEditable ? (
-        <EditTextInput aria-label="Edit todo" onEditComplete={editTitle} text={title} />
+        <EditTextInput aria-label="Edit todo" onEditComplete={changeTitle} text={title} />
       ) : (
         <ListItemText className={titleClasses} onDoubleClick={setAsEditable} text={title} />
       )}

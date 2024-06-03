@@ -14,8 +14,8 @@ type State = {
 
 type Actions = {
   addTodo: (title: string) => Promise<void>;
+  changeTodoTitle: (id: string) => (newTitle: string) => void;
   clearError: () => void;
-  editTodoTitle: (id: string) => (newTitle: string) => void;
   fetchTodos: () => void;
   removeTodo: (id: string) => void;
   setTodoAsEditable: (id: string | null) => void;
@@ -41,15 +41,15 @@ export const useTodosStore = create<TodosStore>()((setState, getState) => ({
       setState({ hasError: !!error, todos: [...getState().todos, todo] });
     },
 
-    clearError: () => setState({ hasError: false }),
-
-    editTodoTitle: (id: string) => (newTitle: string) =>
+    changeTodoTitle: (id: string) => (newTitle: string) =>
       setState({
         editableTodoId: null,
         todos: getState().todos.map((todo) =>
           todo.id === id ? { ...todo, title: newTitle } : todo
         )
       }),
+
+    clearError: () => setState({ hasError: false }),
 
     fetchTodos: async () => {
       setState({ isPending: true });
